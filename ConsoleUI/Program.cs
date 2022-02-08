@@ -14,6 +14,28 @@ namespace ConsoleUI
              * Todo follow all comments!! 
              */
 
+            var vehicles = new List<Vehicle>();
+
+            var corvette = new Car() { Year = 2010, Make = "Chevy", Model = "Corvette ZR1", HasTrunk = false };
+            vehicles.Add(corvette);
+
+            var sv650 = new Motorcycle() { Year = 2006, Make = "Suzuki", Model = "SV650", HasSidecar = false };
+            vehicles.Add(sv650);
+
+            Vehicle caddy = new Car() { Year = 2012, Make = "Cadillac", Model = "CTS-V", HasTrunk = true };
+            vehicles.Add(caddy);
+
+            Vehicle merc = new Car() { Year = 2020, Make = "Mercedes", Model = "AMG GT3", HasTrunk = false };
+            vehicles.Add(merc);
+
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"{vehicle.Year} - {vehicle.Make} - {vehicle.Model}");
+                vehicle.DriveVirtual();
+                vehicle.DriveAbstract();
+                Console.WriteLine("-----------------------------");
+            }
+
             #region Vehicles
 
             /*
@@ -46,7 +68,7 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+            #endregion
             Console.ReadLine();
         }
     }
